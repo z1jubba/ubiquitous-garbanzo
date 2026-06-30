@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ZAYR — Intelligent Business Systems</title>
 <style>
 :root{
@@ -116,6 +116,56 @@ h1 span{display:block}.stroke{color:transparent;-webkit-text-stroke:1.5px #fff}
 body{overflow:auto}.app{grid-template-columns:1fr}.rail{position:sticky;top:0;z-index:20;height:auto;flex-direction:row;padding:12px 14px;border-right:0;border-bottom:1px solid var(--line);gap:12px}.rail img{width:78px}.sideEmail{display:none}.navList{display:flex;gap:8px;overflow:auto}.navItem{min-width:max-content;height:40px}
 .stage{min-height:calc(100vh - 78px)}.panel{position:relative;display:none;min-height:calc(100vh - 78px);padding:40px 18px}.panel.active{display:grid}.num{right:18px;top:18px}h1{font-size:clamp(58px,18vw,108px)}.homeVisual{position:relative;right:auto;bottom:auto;width:100%;height:570px;margin-top:40px}.split,.control,.demoGrid,.callUI,.marketing,.priceWrap,.contactPanel{grid-template-columns:1fr}.storyCard,.command,.demoBox,.callUI,.contactCopy,.contactForm{border-radius:30px;padding:24px;min-height:auto}.feedItem{grid-template-columns:1fr}.reel{height:460px}.chat{width:calc(100vw - 32px);right:-6px}
 }
+
+
+/* Mobile friendly refinements */
+@media(max-width:980px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden;scroll-behavior:smooth}
+  body{overflow-y:auto;-webkit-text-size-adjust:100%;touch-action:pan-y;background:#000;padding-bottom:env(safe-area-inset-bottom)}
+  .bg,.grid{position:fixed;opacity:.65}
+  .app{display:block;min-height:100svh;width:100%;overflow-x:hidden}
+  .rail{position:sticky;top:0;left:0;right:0;z-index:100;width:100%;min-height:72px;padding:calc(10px + env(safe-area-inset-top)) 12px 10px;align-items:center;background:rgba(0,0,0,.82);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+  .rail img{width:64px;flex:0 0 auto}
+  .navList{flex:1;display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;padding:4px 2px 6px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;mask-image:linear-gradient(90deg,transparent,#000 10px,#000 calc(100% - 18px),transparent)}
+  .navList::-webkit-scrollbar{display:none}
+  .navItem{height:42px;min-width:max-content;padding:0 14px;font-size:11px;letter-spacing:.07em;scroll-snap-align:start;touch-action:manipulation}
+  .navItem:hover,.navItem.active{transform:none}
+  .stage{min-height:auto;overflow:visible;width:100%}
+  .panel{position:relative;inset:auto;width:100%;min-height:auto;padding:32px 16px 44px;display:none;opacity:1;pointer-events:auto;transform:none;filter:none;transition:none;overflow:hidden}
+  .panel.active{display:grid;gap:26px;transform:none;filter:none}
+  .num{position:static;justify-self:end;margin-bottom:4px;font-size:10px;letter-spacing:.14em}
+  .kicker{font-size:10px;letter-spacing:.18em;margin-bottom:16px}
+  h1{font-size:clamp(46px,16vw,78px);line-height:.86;letter-spacing:-.075em;overflow-wrap:anywhere}
+  .stroke{-webkit-text-stroke:1px #fff}
+  .lead{font-size:16px;line-height:1.55;margin-top:22px;max-width:100%}
+  .actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:24px;width:100%}
+  .btn{width:100%;min-height:52px;height:auto;padding:16px 18px;text-align:center;line-height:1.25;letter-spacing:.1em}
+  .homeText{align-self:start;max-width:100%;padding-top:8px}
+  .homeVisual{width:100%;height:auto;min-height:0;aspect-ratio:4/5;max-height:560px;margin-top:10px;border-radius:30px;position:relative;right:auto;bottom:auto}
+  .phone{width:min(230px,72vw);height:auto;min-height:430px;padding:68px 18px 20px;border-radius:36px}
+  .phone h3{font-size:28px}.phone p{font-size:13px}.waves{margin:34px 0}
+  .split,.control,.demoGrid,.callUI,.marketing,.priceWrap,.contactPanel{display:grid;grid-template-columns:1fr!important;gap:14px;align-self:start;width:100%}
+  .storyCard,.command,.demoBox,.callUI,.contactCopy,.contactForm,.priceCard{border-radius:26px;padding:22px;min-height:auto;width:100%}
+  .storyCard h2,.demoBox h2,.marketingCopy h2,.contactCopy h2{font-size:clamp(38px,13vw,62px);line-height:.9;letter-spacing:-.065em}
+  .storyCard p,.demoBox p,.marketingCopy p,.contactCopy p,.priceCard p{font-size:15px;line-height:1.55;margin-top:18px}
+  .commandTop{gap:12px;align-items:flex-start}.commandTop img{height:40px}.live{font-size:10px;text-align:right}
+  .feed{gap:10px}.feedItem{grid-template-columns:1fr;gap:8px;padding:14px;border-radius:18px}.feedItem h3{font-size:20px}.feedItem b{width:max-content}
+  .metrics{gap:12px}.metric{min-height:auto;padding:22px;border-radius:24px;gap:20px}.metric span{font-size:50px}.metric p{font-size:14px}
+  .callUI{display:grid;grid-template-columns:1fr!important;padding:16px}.chatStream{min-height:330px;max-height:56vh;border-radius:22px;padding:14px}.bubble{max-width:92%;font-size:14px;padding:12px 14px}.leadCard{border-radius:22px;padding:16px}.leadCard h3{font-size:28px}.leadRow{font-size:14px}
+  .marketing{align-items:start}.reel{height:auto;aspect-ratio:9/14;max-height:560px;border-radius:34px}.reel:before{font-size:34px;left:22px;top:24px}.reel:after{left:20px;bottom:20px}
+  .pills{gap:8px}.pill{font-size:13px;padding:10px 12px}
+  .price{font-size:clamp(54px,18vw,78px);margin-top:22px}.priceCard{gap:28px}
+  .contactCopy img{height:56px;margin-bottom:24px}form{gap:12px}input,textarea{width:100%;font-size:16px;border-radius:16px;padding:15px}textarea{min-height:150px}
+  .assist{right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:120}.orb{width:62px;height:62px;font-size:24px}.chat{position:fixed;right:12px;left:12px;bottom:calc(86px + env(safe-area-inset-bottom));width:auto;max-height:calc(100svh - 120px);border-radius:26px}.chatHead{padding:16px}.chatHead img{width:52px}.chatBody{height:min(310px,44svh);padding:14px}.quick{padding:0 14px 12px}.chatInput{padding:0 14px 14px}.chatInput input{min-width:0;font-size:16px}.chatInput button{min-height:44px}
+}
+
+@media(max-width:520px){
+  .rail{gap:8px}.rail img{width:54px}.navItem{height:38px;padding:0 12px;font-size:10px}.navItem span{display:none}
+  .panel{padding:28px 14px 38px}.bootLogo{width:min(240px,68vw)}.bootRows{gap:10px}.bootRow{letter-spacing:.1em}.bootTagline{font-size:13px}.ready{letter-spacing:.18em}
+  h1{font-size:clamp(42px,17vw,66px)}.homeVisual{aspect-ratio:3/4}.phone{width:min(210px,76vw);min-height:400px}.phone h3{font-size:25px}
+  .storyCard,.command,.demoBox,.contactCopy,.contactForm,.priceCard{padding:20px;border-radius:22px}.callUI{padding:14px;border-radius:22px}.storyCard h2,.demoBox h2,.marketingCopy h2,.contactCopy h2{font-size:clamp(34px,14vw,54px)}
+}
+
 </style>
 <script>try{if(sessionStorage.getItem('zayr_boot_skip'))document.documentElement.classList.add('boot-skipped')}catch(e){}</script>
 </head>
@@ -141,6 +191,12 @@ const root=document.documentElement;addEventListener('mousemove',e=>{root.style.
 let active='home', locked=false; const order=['home','story','control','demo','marketing','pricing','contact']; const wipe=document.getElementById('wipe');
 function go(page, withWipe=true){if(locked||page===active)return;const next=document.querySelector(`[data-page="${page}"]`);if(!next)return;locked=true;if(withWipe){wipe.classList.remove('run');void wipe.offsetWidth;wipe.classList.add('run')}setTimeout(()=>{document.querySelector(`[data-page="${active}"]`).classList.remove('active');next.classList.add('active');active=page;document.querySelectorAll('.navItem').forEach(d=>d.classList.toggle('active',d.dataset.go===page));history.replaceState(null,'','#'+page)},withWipe?390:0);setTimeout(()=>{locked=false;wipe.classList.remove('run')},withWipe?950:250)}
 document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',()=>go(el.dataset.go,true)));
+if(matchMedia('(max-width: 980px)').matches){
+  document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',()=>{
+    setTimeout(()=>window.scrollTo({top:0,behavior:'smooth'}),30);
+  }));
+}
+
 let wheelCooldown=false;addEventListener('wheel',e=>{if(innerWidth<981||wheelCooldown)return;const i=order.indexOf(active);if(Math.abs(e.deltaY)<25)return;wheelCooldown=true;if(e.deltaY>0&&i<order.length-1)go(order[i+1],true);if(e.deltaY<0&&i>0)go(order[i-1],true);setTimeout(()=>wheelCooldown=false,1050)},{passive:true});
 addEventListener('load',()=>{const h=location.hash.replace('#','');if(h&&document.querySelector(`[data-page="${h}"]`))go(h,false)});
 
